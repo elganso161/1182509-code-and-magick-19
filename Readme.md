@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Игорь](https://up.htmlacademy.ru/javascript/19/user/1182509).
-* Наставник: `Неизвестно`.
+* Наставник: [Егор Дьяченко](https://htmlacademy.ru/profile/semperhomolupus).
 
 ---
 
