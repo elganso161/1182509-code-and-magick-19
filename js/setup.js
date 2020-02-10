@@ -21,19 +21,6 @@ var wizards = [
   }
 ];
 
-function createRandomWizard() {
-  return {
-    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
-    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
-    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
-  };
-}
-
-for (var i = 0; i < 3 ; i++) {
-  var wizard = createRandomWizard();
-  wizards.push(wizard);
-}
-
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
 
@@ -44,8 +31,21 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
+function createRandomWizard() {
+  return {
+    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
+    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
+    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
+  };
+}
+
+for (var i = 0; i < 3; i++) {
+  var wizard = createRandomWizard();
+  wizards.push(wizard);
+}
+
 var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizards.length; i++) {
+for (i = 0; i < wizards.length; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
 similarListElement.appendChild(fragment);
