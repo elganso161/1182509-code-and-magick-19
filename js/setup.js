@@ -10,27 +10,29 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template').c
 
 var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+var WIZARD_COAT_COLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+var WIZARD_EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var wizards = [
   {
-    name: WIZARD_NAMES[0] + '\r\n' + WIZARD_SURNAMES[0],
+    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
     coatColor: 'rgb(101, 137, 164)',
-    eyesColor: 'black'
-  },
-  {
-    name: WIZARD_NAMES[1] + '\r\n' + WIZARD_SURNAMES[1],
-    coatColor: 'rgb(241, 43, 107)',
     eyesColor: 'red'
   },
   {
-    name: WIZARD_NAMES[2] + '\r\n' + WIZARD_SURNAMES[2],
-    coatColor: 'rgb(146, 100, 161)',
-    eyesColor: 'blue'
+    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
+    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
+    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
   },
   {
-    name: WIZARD_NAMES[3] + '\r\n' + WIZARD_SURNAMES[3],
-    coatColor: 'rgb(56, 159, 117)',
-    eyesColor: 'yellow'
+    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
+    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
+    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
+  },
+  {
+    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
+    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
+    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
   }
 ];
 
@@ -51,4 +53,3 @@ for (var i = 0; i < wizards.length; i++) {
 similarListElement.appendChild(fragment);
 
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
-
