@@ -18,23 +18,21 @@ var wizards = [
     name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
     coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
     eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
-  },
-  {
-    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
-    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
-    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
-  },
-  {
-    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
-    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
-    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
-  },
-  {
-    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
-    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
-    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
   }
 ];
+
+function createRandomWizard() {
+  return {
+    name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + '\r\n' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
+    coatColor: WIZARD_COAT_COLOR[Math.floor(Math.random() * WIZARD_COAT_COLOR.length)],
+    eyesColor: WIZARD_EYES_COLOR[Math.floor(Math.random() * WIZARD_EYES_COLOR.length)]
+  };
+}
+
+for (var i = 0; i < 3 ; i++) {
+  var wizard = createRandomWizard();
+  wizards.push(wizard);
+}
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
