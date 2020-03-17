@@ -58,5 +58,4 @@
     load: load,
     save: save
   };
-
 })();
